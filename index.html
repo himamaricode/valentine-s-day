@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine's Day Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background music -->
+  <audio id="bgMusic" autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+    Your browser does not support audio.
+  </audio>
+
+  <!-- Page 1 -->
+  <div id="welcome">
+    <h1>💝 Happy Valentine's Day 💝</h1>
+    <button onclick="showQuizIntro()">Continue</button>
+  </div>
+
+  <!-- Page 2 -->
+  <div id="quizIntro" class="hidden">
+    <h2>Let's see how much you know about me 💕</h2>
+    <button onclick="startQuiz()">Start Quiz</button>
+  </div>
+
+  <!-- Quiz -->
+  <div id="quiz" class="hidden">
+    <h2 id="question"></h2>
+    <div id="options"></div>
+    <button id="nextBtn" onclick="nextQuestion()">Next</button>
+  </div>
+
+  <!-- Result -->
+  <div id="resultPage" class="hidden">
+    <h2>Your Result 💌</h2>
+    <p class="result" id="score"></p>
+    <button onclick="showLetter()">💐</button>
+  </div>
+
+  <!-- Love Letter -->
+  <div id="letterPage" class="hidden">
+    <h2>My Love Letter to You 💖</h2>
+    <div class="love-letter" id="letterText"></div>
+    <button onclick="showValentinePage()">Next ➡️</button>
+  </div>
+
+  <!-- Valentine Proposal -->
+  <div id="valentinePage" class="hidden">
+    <h2>Will you be my Valentine? 💍</h2>
+    <button onclick="recordValentine('Yes'); showThankYouPage();">Yes 💖</button>
+    <button onclick="recordValentine('No'); showThankYouPage();">No 😢</button>
+    <br><br>
+    <button onclick="downloadReport()">📄 Download Responses</button>
+  </div>
+
+  <!-- Thank You Page -->
+  <div id="thankYouPage" class="hidden">
+    <h2>Thank you for your time 🌷</h2>
+    <p class="result">It means a lot to me that you did this.</p>
+    <div class="report-actions">
+      <button onclick="downloadReport()">📄 Download Responses</button>
+      <button onclick="resetQuiz()">🔁 Restart</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
